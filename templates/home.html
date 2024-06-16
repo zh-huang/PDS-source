@@ -1,0 +1,122 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Welcome</title>
+	<link rel="stylesheet" href={{ url_for('static', filename='css/home.css' ) }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/topStyle.css' ) }} />
+	<link rel="icon" href="{{ url_for('static',  filename='images/logo.png') }}" type="image/png" />
+</head>
+
+<body>
+	<div id="title">
+		<a href="/">
+			<img id="logo" src={{ url_for('static', filename='images/logo.png' )}} />
+		</a>
+	
+		<form action="/searchItem" method="POST" target="_blank">
+			<input id="searchBox" type="text" name="searchQuery">
+			<input id="searchButton" type="submit" value="Search">
+		</form>
+	
+		{% if not loggedIn %}
+		<div id="signInButton">
+			<a class="link" href="/loginForm">Sign In</a>
+		</div>
+		{% else %}
+		<div class="dropdown">
+			<button class="dropbtn">Hello, <br>{{firstName}}</button>
+			<div class="dropdown-content">
+				{% if usertype == 'admin' %}
+					<a href="/admin">Admin</a>
+				{% endif %}
+				<a href="/account/profile">Your profile</a>
+				<hr>
+				<a href="/logout">Sign Out</a>
+			</div>
+		</div>
+		{% endif %}
+	
+		<div id="kart">
+			<a class="link" href="/cart">
+				<img src={{url_for('static', filename='images/shoppingCart.png' )}} id="cartIcon" />
+				CART {{noOfItems}}
+			</a>
+		</div>
+	
+	</div>
+
+	<div class="display">
+		<div class="container">
+
+			<section style="background-image:url(../static/images/img5.jpg)" class="img">
+				<section class='section'>
+					<div class='masthead-image' id='master-container'>
+						<div class='content center'>
+							<h1 id='master'>
+								<div>欢迎光临云上书店</div>
+							</h1>
+						</div>
+					</div>
+				</section>
+			</section>
+
+			<section id="img-one" class="img">
+				<h1 style="font-size: 80px;color: rgb(255, 255, 255)；" id="name">图书分类</h1>
+			</section>
+
+			{% for row in categoryData %}
+			<section class="content-one">
+				<div class="text-box">
+					<div class="cnt">
+						<a href="/displayCategory?categoryId={{row[0]}}">
+							<div>{{row[1]}}</div>
+						</a>
+						<p>
+							{{row[2]}}
+						</p>
+						<div class="svg-wrapper">
+							<div id="text">
+								<a href="">B A C K</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			{% endfor %}
+
+		</div>
+
+
+		<div>
+			<section id="img-two" class="img">
+				<h1 style="font-size: 80px;color: rgb(255, 255, 255);" id="name">商品展示</h1>
+			</section>
+
+			{% for data in itemData%}
+			{% for row in data %}
+			<section class="content-three">
+				<div class="item_Display">
+					<div class="item">
+
+						<p style="font-size: 40px; margin-top: 50px;">{{row[1]}} </p>
+						<p style="font-size: 55px; padding-bottom: 50px; ">¥{{row[2]}}</p>
+
+						<a href="/productDescription?productId={{row[0]}}">
+							<img style="display: block; width: 155px; margin: 0 auto; " src={{ url_for('static',
+								filename='uploads/' + row[4]) }} id="itemImage" />
+						</a>
+
+						<p
+							style="font-size: 25px; padding-top: 50px; margin-bottom: 30px;margin-left:25px;margin-right:25px;">
+							{{row[3]}}</p>
+
+					</div>
+				</div>
+			</section>
+			{% endfor %}
+			{% endfor %}
+		</div>
+
+	</div>
+</body>

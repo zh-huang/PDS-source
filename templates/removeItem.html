@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Remove</title>
+	<link rel="stylesheet" href={{url_for('static', filename='css/remove.css' )}}>
+	</link>
+</head>
+
+<body style="background-image:url(../static/images/img2.jpg) ">
+    <div style="position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: rgba(255, 255, 255, 0.5);
+	border-width: 3px;
+	border-style: solid;
+	border-color: #000000;
+	border-radius: 25px;
+
+    width: 700px;
+    height: 500px;
+    ">
+	<div style="display: flex;flex-direction: column; overflow-y: scroll;height: 500px;">
+	
+		{% for row in data %}
+		<p style="margin-left: 50px; margin-right: 50px;">
+			{% for i in range(3) %}
+				
+				<a href="/removeItemBack?productId={{row[0]}}">	
+					{{row[i]}}					
+				</a><br>
+				
+			{% endfor %}
+		</p>
+		{% endfor %}
+	
+	</div>
+	
+	</div>
+	<a href="/admin" style="position: absolute;
+		left: 80%;
+		top: 80%;
+		background-color: rgba(255, 255, 255, 0.5);
+		border-width: 3px;
+		border-style: solid;
+		border-color: #000000;
+		border-radius: 25px;
+		padding: 5px;
+			">back</a>
+</body>
+
+</html>

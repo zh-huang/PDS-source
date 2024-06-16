@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Admin</title>
+	<link rel="stylesheet" href={{ url_for('static', filename='css/topStyle.css' ) }} />
+	<link rel="icon" href="{{ url_for('static',  filename='images/logo.png') }}" type="image/png" />
+</head>
+
+<body style="background-image:url(../static/images/img1.jpg) ">
+    <div style="position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: rgba(255, 255, 255, 0.5);
+	border-width: 3px;
+	border-style: solid;
+	border-color: #000000;
+	border-radius: 25px;
+
+    width: 700px;
+    height: 500px;
+    ">
+        <div style="font-size: 48px; color: blue;padding: 5%;">
+            <h3>Admin</h3>
+        </div>
+        <div style="display: flex; flex-direction: column; font-size: 36px; padding: 5%;">
+            <a href="addItem">addItem</a>
+            <a href="removeItem">removeItem</a>
+            <a href="addCategory">addCategory</a>
+            <a href="removeCategory">removeCategory</a>
+        </div>
+    </div>
+    <a href="/" style="position: absolute;
+		left: 80%;
+		top: 80%;
+		background-color: rgba(255, 255, 255, 0.5);
+		border-width: 3px;
+		border-style: solid;
+		border-color: #000000;
+		border-radius: 25px;
+		padding: 5px;
+			">back</a>
+</body>
+
+</html>

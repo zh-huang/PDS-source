@@ -1,0 +1,92 @@
+#tableItems {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 20%;
+	margin-right: 20%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: space-around;
+	justify-content: space-between;
+}
+
+#cartItems {
+	margin-top: 70px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+#each-item {
+	display:flex;
+	font-size:20px;
+	background-color: rgba(255,255,255,0.5);
+	border-width: 3px;
+	border-style: solid;
+	border-color: #000000;
+	border-radius:5px;
+	margin-top:10px;
+	margin-bottom:10px;
+
+	width:400px;
+
+}
+
+#itemImage {
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	height: 100px;
+	float: left;
+}
+
+#itemName {
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	height: 100px;
+	width: 200px;
+	float: left;
+}
+
+#titleName {
+	width: 200px;
+	float: left;
+}
+
+#titlePrice {
+	float: left;
+}
+
+#itemPrice {
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	height: 100px;
+	display: inline-block;
+}
+
+#image {
+	height: 100px;
+	width: 80px;
+}
+
+#total {
+	margin-left:80%;
+}
+
+#itemNameTag {
+	font-weight: bold;
+}
+
+#subtotal {
+	text-align: right;
+	font-weight: bold;
+	font-size: 20px;
+}

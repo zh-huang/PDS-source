@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Admin</title>
+	<link rel="stylesheet" href={{ url_for('static', filename='css/topStyle.css' ) }} />
+	<link rel="icon" href="{{ url_for('static',  filename='images/logo.png') }}" type="image/png" />
+</head>
+
+<body style="background-image:url(../static/images/img2.jpg) ">
+    <div style="position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: rgba(255, 255, 255, 0.5);
+	border-width: 3px;
+	border-style: solid;
+	border-color: #000000;
+	border-radius: 25px;
+
+    width: 700px;
+    height: 500px;
+    ">
+	<form action="/addItemBack" method="POST" enctype="multipart/form-data"style="position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);" >
+		Name: <input type="text" name="name"><br>
+		Price: <input type="text" name="price"><br>
+		Description: <textarea name="description" rows=3 cols="40"></textarea><br>
+		Image: <input type="file" name="image"><br>
+		Stock: <input type="text" name="stock"><br>
+		Category: <select name="category">
+			{% for row in categories %}
+			<option value="{{row[0]}}">{{row[1]}}</option>
+			{% endfor %}
+		</select><br>
+		<input type="submit">
+	</form>
+	<a href="/admin" style="position: absolute;
+		left: 80%;
+		top: 80%;
+		background-color: rgba(255, 255, 255, 0.5);
+		border-width: 3px;
+		border-style: solid;
+		border-color: #000000;
+		border-radius: 25px;
+		padding: 5px;
+			">back</a>
+	</div>
+</body>
+
+</html>

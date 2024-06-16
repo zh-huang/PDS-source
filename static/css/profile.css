@@ -1,0 +1,54 @@
+.button {
+	background-color: rgba(137, 43, 226, 0.5);
+	font-size: 40px;
+	text-align: center;
+	display: inline-block;
+	border-radius: 6px;
+	margin-top: 15px;
+	padding-top: 15px;
+	padding-left: 25px;
+	padding-bottom: 15px;
+	padding-right: 25px;
+}
+
+.button:active {
+	background-color: rgba(137, 43, 226);
+}
+
+.button span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.button span:after {
+	content: '>';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -10px;
+	transition: 0.5s;
+}
+
+.button:hover span {
+	padding-right: 35px;
+}
+
+.button:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+
+#button-back {
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+#heading {
+	font-size: 50px;
+	text-align: center;
+	padding-top: 20px;
+}

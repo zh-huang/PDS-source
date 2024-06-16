@@ -1,0 +1,95 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Your Cart</title>
+	<link rel="stylesheet" href={{url_for('static', filename='css/cart.css' )}} />
+	<link rel="stylesheet" href={{url_for('static', filename='css/topStyle.css' ) }} />
+	<link rel="icon" href="{{ url_for('static',  filename='images/logo.png') }}" type="image/png" />
+</head>
+
+<body style="background-image:url(../static/images/cart.jpg)">
+
+	<div id="title">
+		<a href="/">
+			<img id="logo" src={{ url_for('static', filename='images/logo.png' )}} />
+		</a>
+	
+		<form action="/searchItem" method="POST" target="_blank">
+			<input id="searchBox" type="text" name="searchQuery">
+			<input id="searchButton" type="submit" value="Search">
+		</form>
+	
+		{% if not loggedIn %}
+		<div id="signInButton">
+			<a class="link" href="/loginForm">Sign In</a>
+		</div>
+		{% else %}
+		<div class="dropdown">
+			<button class="dropbtn">Hello, <br>{{firstName}}</button>
+			<div class="dropdown-content">
+				{% if usertype == 'admin' %}
+					<a href="/admin">Admin</a>
+				{% endif %}
+				<a href="/account/profile">Your profile</a>
+				<hr>
+				<a href="/logout">Sign Out</a>
+			</div>
+		</div>
+		{% endif %}
+	
+		<div id="kart">
+			<a class="link" href="/cart">
+				<img src={{url_for('static', filename='images/shoppingCart.png' )}} id="cartIcon" />
+				CART {{noOfItems}}
+			</a>
+		</div>
+	
+	</div>
+
+	<div id="cartItems">
+
+		<div>
+			<h2 style="font-size: 30px; text-align: center; padding-top:20px">购物车</h2>
+		</div>
+
+		<div id="tableItems">
+
+			{% for row in products %}
+			<div id="each-item">
+
+				<div id="itemImage">
+					<img src={{url_for('static', filename='uploads/' +row[3])}} id="image" />
+				</div>
+
+				<div id="itemName">
+					<span id="itemNameTag" style="font-size:28px;">{{row[1]}}</span>
+					<br>有货<br>
+					<a href="/removeFromCart?productId={{row[0]}}">移除</a>
+				</div>
+
+				<div id="itemPrice">
+					¥{{row[2]}}
+				</div>
+
+			</div>
+			{% endfor %}
+
+			<div id="total">
+				<p id="subtotal">总价: ¥{{totalPrice}}</p>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div
+		style="margin-left:50%;transform:translate(-50%,0); background-color: rgba(255,255,255,0.5); border-width: 3px; border-style: solid; border-color: #000000; border-radius: 5px; width: 150px; height: 40px; display: flex;  justify-content: center; align-items: center; margin-bottom:20px;">
+		<div style="font-size:25px">
+			<a href="/checkout">结账</a>
+		</div>
+	</div>
+
+</body>
+
+</html>

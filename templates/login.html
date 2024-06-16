@@ -1,0 +1,63 @@
+<html>
+
+<head>
+	<title> First flask app </title>
+	<link rel="stylesheet" href={{ url_for('static', filename='css/login.css' ) }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/topStyle.css' ) }} />
+	<link rel="icon" href="{{ url_for('static',  filename='images/logo.png') }}" type="image/png" />
+</head>
+
+<body>
+	<div id="title">
+		<a href="/">
+			<img id="logo" src={{ url_for('static', filename='images/logo.png' )}} />
+		</a>
+	
+		<form action="/searchItem" method="POST" target="_blank">
+			<input id="searchBox" type="text" name="searchQuery">
+			<input id="searchButton" type="submit" value="Search">
+		</form>
+	
+		{% if not loggedIn %}
+		<div id="signInButton">
+			<a class="link" href="/loginForm">Sign In</a>
+		</div>
+		{% else %}
+		<div class="dropdown">
+			<button class="dropbtn">Hello, <br>{{firstName}}</button>
+			<div class="dropdown-content">
+				{% if usertype == 'admin' %}
+					<a href="/admin">Admin</a>
+				{% endif %}
+				<a href="/account/profile">Your profile</a>
+				<hr>
+				<a href="/logout">Sign Out</a>
+			</div>
+		</div>
+		{% endif %}
+	
+		<div id="kart">
+			<a class="link" href="/cart">
+				<img src={{url_for('static', filename='images/shoppingCart.png' )}} id="cartIcon" />
+				CART {{noOfItems}}
+			</a>
+		</div>
+	
+	</div>
+
+	<body style="background-image:url(../static/images/imformation.jpg) ">
+		<form action="/login" method="POST">
+
+			<body style="overflow: hidden; margin: 0; padding: 0;">
+				<div class="front">
+					<input class="ipt id" placeholder="example@gmail.com" name="email">
+					<input type="password" class="ipt keyword" placeholder="password" name="password">
+					<p><input type="submit" class="submit"></p>
+					<p> {{error}} </p>
+					<a href="/registerationForm">Register here</a>
+				</div>
+			</body>
+		</form>
+	</body>
+
+</html>

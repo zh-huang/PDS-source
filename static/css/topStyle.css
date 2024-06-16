@@ -1,0 +1,110 @@
+#logo {
+	height: 60px;
+	width: 90px;
+	margin-left: 10px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-right: 20px;
+	float: left;
+}
+
+#title {
+	background-color: #483d72;
+	display: inline-block;
+	width: 100%;
+	position: fixed;
+	height: 70px;
+	left: 0;
+	top: 0;
+	z-index: 1;
+
+}
+
+#searchBox {
+	height: 30px;
+	width: 60vw;
+	margin-top: 18px;
+	margin-left: 20px;
+	margin-right: 20px;
+	float: left;
+	font-size: 24px;
+}
+
+#searchButton {
+	height: 25px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	background-color: aquamarine;
+	border-radius: 8px;
+	float: left;
+}
+
+.dropbtn {
+	background-color: #483d72;
+	color: white;
+	padding: 16px;
+	font-size: 15px;
+	border: none;
+	cursor: pointer;
+}
+
+.dropdown {
+	position: relative;
+	float: left;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+	font-size: 14px;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: gray;
+}
+
+#signInButton {
+	color: yellow;
+	position: absolute;
+	top: 3vh;
+	right: 10vw;
+	font-size: 16px;
+	float: left;
+}
+
+.link {
+	color: aqua;
+}
+
+#kart {
+	color: white;
+	position: absolute;
+	top: 3vh;
+	right: 3vw;
+	font-size: 16px;
+	float: left;
+}
+
+#cartIcon {
+	height: 16px;
+	width: 16px;
+}

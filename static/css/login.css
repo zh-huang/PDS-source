@@ -1,0 +1,135 @@
+.front {
+    height: 400px;
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.64);
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 24px;
+
+    text-align: center;
+    box-shadow: 0px 10px 16px #0006;
+}
+
+.ipt {
+    outline-style: none;
+    border-radius: 6px;
+    position: absolute;
+    left: 12.5%;
+    border: 0;
+    font-size: 30px;
+    width: 75%;
+    background-color: rgb(216, 255, 255, 0.8);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #9ACDD0;
+}
+
+.ipt:focus {
+    border-bottom: 2px solid #9ACDD080;
+}
+
+.id {
+    position: absolute;
+    top: 20%;
+}
+
+.keyword {
+    position: absolute;
+    top: 40%;
+}
+
+.okeyword {
+    position: absolute;
+    top: 10%;
+}
+
+.nkeyword {
+    position: absolute;
+    top: 30%;
+}
+
+.ckeyword {
+    position: absolute;
+    top: 50%;
+}
+
+
+.submit {
+    font-size: 24px;
+    border-radius: 12px;
+    background-color: rgb(128, 216, 216, 0.8);
+    opacity: 0.8;
+    width: 80%;
+    margin-top: 260px;
+    border: 0;
+    padding: 15px;
+}
+
+.submit-log {
+    margin-top: 60%;
+}
+
+.submit:active {
+    opacity: 1;
+}
+
+.table {
+    height: 540px;
+    width: 340px;
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.64);
+    border-radius: 12px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.it {
+    margin-top: 12px;
+    height: 21px;
+    width: 150px;
+    text-align: center;
+    font-weight: 500;
+    background-color: rgba(128, 255, 255, 0);
+    border-radius: 3px;
+    opacity: 0.8;
+}
+
+.it2 {
+    margin-top: 12px;
+    height: 27px;
+    width: 150px;
+    text-align: center;
+    font-weight: 500;
+    background-color: rgba(128, 255, 255, 0);
+    border-radius: 3px;
+    opacity: 0.8;
+}
+
+.register {
+    font-size: 24px;
+    border-radius: 12px;
+    background-color: rgb(192, 216, 216, 0.8);
+    opacity: 0.8;
+    width: 80%;
+    margin-top: 10px;
+    border: 0;
+    padding: 15px;
+}
+
+.register-log {
+    margin-top: 60%;
+}
+
+.register:active {
+    opacity: 1;
+}

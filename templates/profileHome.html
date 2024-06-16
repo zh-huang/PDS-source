@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Profile Home</title>
+	<link rel="stylesheet" href={{ url_for('static', filename='css/profile.css' ) }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/topStyle.css' ) }} />
+	<link rel="icon" href="{{ url_for('static',  filename='images/logo.png') }}" type="image/png" />
+</head>
+
+<body style="background-image: url(../static/images/imformation.jpg) ">
+
+	<div id="title">
+		<a href="/">
+			<img id="logo" src={{ url_for('static', filename='images/logo.png' )}} />
+		</a>
+	
+		<form action="/searchItem" method="POST" target="_blank">
+			<input id="searchBox" type="text" name="searchQuery">
+			<input id="searchButton" type="submit" value="Search">
+		</form>
+	
+		{% if not loggedIn %}
+		<div id="signInButton">
+			<a class="link" href="/loginForm">Sign In</a>
+		</div>
+		{% else %}
+		<div class="dropdown">
+			<button class="dropbtn">Hello, <br>{{firstName}}</button>
+			<div class="dropdown-content">
+				{% if usertype == 'admin' %}
+					<a href="/admin">Admin</a>
+				{% endif %}
+				<a href="/account/profile">Your profile</a>
+				<hr>
+				<a href="/logout">Sign Out</a>
+			</div>
+		</div>
+		{% endif %}
+	
+		<div id="kart">
+			<a class="link" href="/cart">
+				<img src={{url_for('static', filename='images/shoppingCart.png' )}} id="cartIcon" />
+				CART {{noOfItems}}
+			</a>
+		</div>
+	
+	</div>
+	
+	<div class="display" style="padding-top:70px;">
+		<h2 id="heading">Profile Home</h2>
+		<div id="button-back">
+			<button class="button"><a href="/account/profile/edit"><span>Edit Profile</span></a></button><br>
+			<button class="button"><a href="/account/profile/changePassword"><span>Change password</span></a></button>
+		</div>
+	</div>
+</body>
+
+</html>
